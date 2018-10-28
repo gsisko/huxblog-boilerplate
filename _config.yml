@@ -14,7 +14,7 @@ baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog host
 RSS: false
 github_username: gsisko
 reddit_username: GabeIsko
-linkedin_visitor_id: terrytangyuan
+linkedin_visitor_id: gabeisko
 
 
 # Build settings
