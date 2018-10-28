@@ -12,12 +12,9 @@ baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog host
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
-#twitter_username:  huxpro
-facebook_username:  huxpro
-
+github_username: gsisko
+reddit_username: GabeIsko
+linkedin_visitor_id: terrytangyuan
 
 
 # Build settings
