@@ -10,7 +10,8 @@ tags:
   - Cobots
 ---
 
-## The Need for Cobotics
+The Need for Cobotics
+---------------
 
  Industrial Robots are used to automate tasks that are to complicated, to repetitive, or too dangerous for humans to accomplish manually. In order to accomplish these tasks, the power output and payload forces of an industrial Robot are often beyond what is safe for humans to interact with.
 
@@ -23,12 +24,27 @@ In section **1.1.1** The [manual][FanucUserManual] outlines:
 
 >[Robot] Operators cannot work in the inside of the safety fence.
 
-Accepted insustrial robotics safety precautions are outlined by international safety standard [ISO 10218-1:2011](ISO_Robot_Standard). While this safety standard gives some consideration to guidelines regarding collaborative robotics applications, it is quite vague and does not clearly define the safety considerations needed to create a collaborative robot. New advances in robotics research have allowed industrial robotics to manufacture robots that can safely operate in collaboration with human operators. ISO has responded by publishing the [ISO 15066][ISO_Cobot_Specification] which gives new clarity regarding the guidelines for colaborative Robotics operation and safety. With these standards in place, Robot makers can ensure that they are using the best available.
+Accepted insustrial robotics safety precautions are outlined by international safety standard [ISO 10218-1:2011](ISO_Robot_Standard). While this safety standard gives some consideration to guidelines regarding collaborative robotics applications, it is quite vague and does not clearly define the safety considerations needed to create a collaborative robot. New advances in robotics research have allowed industrial robotics to manufacture robots that can safely operate in collaboration with human operators. ISO has responded by publishing the [ISO 15066][ISO_Cobot_Specification] which gives new clarity regarding the guidelines for collaborative Robotics operation and safety. With these standards in place, Robot makers can ensure that they are using the best available practices for building and implementing collaborative Robots.
 
+What are Cobots?
+-------------------
 
+By adhering to safety practices, Cobots are able to perform industrial applications alongside human operators. While non-collaborative industrial robots require external safety devices to be safe, cobots are designed for the possibility of contact with humans. Safety measures must be implemented to ensure that human-robot contact does not result in injury. [ISO 15066][ISO_Cobot_Specification] specifies two contact scenarios:
 
+- Transient contact
+  - Classification of short contact (<50ms). In a transient contact instance, the human body part is not constrained and is free to recoil. In transient contact scenarios the peak force and energy transfer must be accounted for in the safety design.
+  ![Cobot Safety Development](assets/markdown-img-paste-20181108171216826.png "Transient Contact Illustration")
+- Quasi-Static Contact
+  - Classification for extended contact scenario between the human and the Cobot, caused when the human body part is constrained and cannot pull away. Along with the considerations for transient contact, the pressure and stress the robot exerts must be accounted for. Therefore, factures such as contact area and duration must be taken into consideration for the safety design of the Cobot during these scenarios.
+   ![Cobot Safety Development](assets/markdown-img-paste-20181108171232289.png "Quasi-Static Contact illustration")
 
-## What are Cobots?
+You should notice that most of the values in both these contact scenarios are generally fixed values - the Mass and contact area of an industrial robot is based on it's construction and doesn't normally change during operation. Safety designers seek to limit the duration of contact to be as short as possible once contact is detected by the cobot. Therefore, the main design task for collaborative Robots is force sensing and limiting. By sensing the force it exerts, the cobot can ensure that none of the limit thresholds outlined in ISO 15066 are broken in the event of a contact scenario.
+
+Force Limiting
+-------------------
+
+The first, and easiest method to make sure that a cobot doesn't exert a dangerous amount of force during a contact scenario is to design it so that it is unable to exert a dangerous ammount of foce in any scenario. 
+
 
 
 <!-- sources -->
@@ -42,3 +58,4 @@ Accepted insustrial robotics safety precautions are outlined by international sa
 
 [Cobot_Safety]: https://cobotsguide.com/safety/
 [Robotiq ISO]: https://blog.robotiq.com/hubfs/eBooks/ebook-ISOTS15066-Explained.pdf?hsLang=en-ca&t=1541623946382
+[Cobot Safety Development]: https://www.researchgate.net/publication/282809861_ISOTS_15066_-_Collaborative_Robots_-_Present_Status
