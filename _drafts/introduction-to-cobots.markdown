@@ -43,7 +43,7 @@ You should notice that most of the values in both these contact scenarios are ge
 Force Limiting
 -------------------
 
-The first, and easiest method to make sure that a cobot doesn't exert a dangerous amount of force during a contact scenario is to design it so that it is unable to exert a dangerous ammount of foce in any scenario. 
+The first, and easiest method to make sure that a cobot doesn't exert a dangerous amount of force during a contact scenario is to design it so that it is unable to exert a dangerous amount of force in any scenario. S
 
 
 
