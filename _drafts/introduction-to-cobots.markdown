@@ -49,7 +49,7 @@ In Quasi Static contact scenarios, more sophisticated approaches to force contro
 
 ![](assets/markdown-img-paste-20181113164243520.png)
 
-As you can see from the above schematic, the LTC6100 will output a mirror of the voltage across $R_sense$ in the above schematic. By implementing this circuit on the power supply rail of an output actuator the current draw of the actuation can be measured by knowing the value of $R_sense$, and using ohm's law: $V=IR$. With the output current measured, the robot can effectively measure the torque output of an electric actuator. By doing this at each of it's output joints, the possible force transfer during a contact scenario can be calculated, and a safety condition can be triggered if it exceeds the value specified in [ISO 15066][ISO_Cobot_Specification].
+As you can see from the above schematic, the LTC6100 will output a mirror of the voltage across $R_{sense}$ in the above schematic. By implementing this circuit on the power supply rail of an output actuator the current draw of the actuation can be measured by knowing the value of $R_{sense}$, and using ohm's law: $V=IR$. With the output current measured, the robot can effectively measure the torque output of an electric actuator. By doing this at each of it's output joints, the possible force transfer during a contact scenario can be calculated, and a safety condition can be triggered if it exceeds the value specified in [ISO 15066][ISO_Cobot_Specification].
 
 
 
