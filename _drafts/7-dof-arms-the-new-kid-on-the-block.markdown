@@ -40,22 +40,39 @@ If a robot were to have more joints along it's chain, it would actually extend t
 Singularities - the Bane of Serial Manipulators
 ------------------------------
 
-Singularities in a Robot workspace occur when the robot has one degree of freedom unavailable to it, and it becomes less than a 6 degree of freedom manipulator. In these configurations, it is still possible for the robot to move the end effector 
+Singularities in a Robot workspace occur when the robot has one degree of freedom unavailable to it, and it becomes less than a 6 degree of freedom manipulator. In these configurations, it is still possible for the robot to move the end effector to any position and orientation in the workspace, through the singularity. However, continuous motions cannot be made through a singularity - the end effector has to stop and wait for the arm to reconfigure itself, often until all six degrees of fredom are alailable.
 
-One of the issues with having
+It is much easier to show singularities than to just describe them. Singularties of Six degree of freedom Serial Manipulators can be broken into [three categories][Robotiq Singularities]:
 
+- **Wrist Singularties**:
 
-The Kinematics of Singularities - A quick Overview
-----------------------
+<img src="assets/wrist_singularity.gif" alt="Wrist Singularity">
 
+Wrist singularities occur when the wrist joint is on the same axis of rotation as an earlier joint on the robot.
 
-7 Degrees of Freedom - A Solution to our Problems
----------------------
+-**Elbow Singularities**
+<img src="assets/elbow_singularity.gif" alt="Elbow Singularity">
+This singularity occurs because 3 joints are co-planar with each other, and the movement of the robot along an entire plane is constricted. This singularity is what happens when the robot tries to reach to far, and occurs when the manipulator tries to reach past it's workspace.
 
-Although 6 Degree of Freedom arms are cable of freely moving an end effector, more joints can still be added which result in Redundant degrees of freedom in the Robot arm.
+-**Shoulder singularity**
+<img src="assets/shoulder_singularity.gif" alt="Shoulder Singularity">
+This singularity occurs when one of the wrist joints lines up with one of the base joints.
+>All images were taken from [this video]().
 
+When a singularity occurs, the robot cannot make a continuous linear move through a point. If we were to plot the joint velocities of each of these moves, they would actually trend towards infinity. Since it is impossible to achieve infinite speed, an industrial robot will often throw an error when a path is planned through a singularity. These errors can be disabled, however movement around the singularity can become unpredictable and become a safety hazard.
+
+7 Degrees of Freedom to the Rescue
+-------------------------
+Since 6 Degree of freedom Serial Manipulators display this behavior around singularities, many robot makers are building 7 Degree of Freedom industrial robot arms.  With 7 Degrees of Freedom, the robot arms actually match the freedom of movement of a human arm.
+
+By adding a single redundant degree of freedom, each of the singularities are eliminated. As industrial automation applications become more complicated, continuous motion through these singularity points are often necessary. If *you* have an application that requires complex motion throughout a large workspace, you should consider using the extra degree of freedom. 
 
 <!-- sources -->
 
 [Universal Robots]:https://www.universal-robots.com/?gclid=CjwKCAiA0O7fBRASEiwAYI9QAnmYyRTORDity8H-FiPwIuzoLP-1W2NirBj0SZUtqN2-YWz-ATx1nxoCFpgQAvD_BwE
+
+[Singularity video]:
+
+[Robotiq Singularities]: https://blog.robotiq.com/why-singularities-can-ruin-your-day
+
 [6 DOF Arm Diagram]: https://www.researchgate.net/publication/261281825_A_screw_dual_quaternion_operator_for_serial_robot_kinematics
